@@ -1,0 +1,162 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>千与千寻网</title>
+<link rel="stylesheet" type="text/css" href="css/view.css"/>
+<style>
+	.addd {
+		width: 100%;
+		height: 200px;
+	}
+	.addd h2 {
+		font-size: 16px;
+		color: #1c98b0;
+		margin: 20px 0 0 20px;
+	}
+	textarea {
+		margin-top: 15px;
+		height: 140px;
+		width: 300px;
+		color: gray;
+		margin-left: 50px; 
+		background-color: #f1f2f3;
+		border-radius: 3%;
+	}
+	button {
+		display: inline-block;
+		margin-left: 180px;
+		margin-top: 10px;
+		width: 60px;
+		height: 35px;
+		background-color: #00aeec	;
+		border: 0px;
+		border-radius: 10%;
+
+		color: white;
+
+	}
+	.Imgs {
+		float: right;
+		height: 220px;
+		width: 53%;
+		background-color: #fcedc4;
+		margin-right: 35px;
+	}
+	.Imgs li {
+		display: inline-block;
+	}
+	.addd li img {
+		height: 105px;
+		width: 250px;
+
+	}
+	 
+	.hh  {
+		 padding-left: 8px;
+		padding-top: 5px; 
+	 } 
+	 .hhh {
+		padding-left: 8px;
+	} 
+</style>
+</head>
+
+<body>
+
+<!--container start-->
+<div class="container">
+
+	<!--header start-->
+	<div class="header" id="header">
+		<a href="index.html">
+		<img src="images/header.jpg">
+		</a>
+	</div>
+	<!--header end-->
+	
+	<!--nav start-->
+	<div class="nav">
+		<a href="index.html">千寻首页</a>
+		<a href="view1.html">剧情简介</a>
+		<a href="view2.html">人物简介</a>
+		<a href="view3.html">精彩剧照</a>
+		<a href="view4.html">获奖记录</a>
+		<a href="view5.html">热门影评</a>
+		<a href="view6.html">影片意义</a>
+		<a href="login.html">登录/注册</a>
+	</div>
+	<!--nav end-->
+	
+
+	<!--wrapper start-->
+	<div class="wrapper">
+	
+
+		<!--comment start-->
+		<div class="comment">
+		
+			<h2>热门影评</h2>
+			
+			<img src="images/comment1.jpg"/>
+			<img src="images/comment2.jpg"/>
+			<img src="images/comment3.jpg"/>
+			<img src="images/comment4.jpg"/>
+			<img src="images/comment5.jpg"/>
+			<img src="images/comment6.jpg"/>
+			<img src="images/comment7.jpg"/>
+			<img src="images/comment8.jpg"/>
+			<img src="images/comment9.jpg"/>
+
+			
+		</div>
+		<!--comment end-->
+		<div class="addd">
+			<h2>添加影评</h2>
+			<textarea> 发一条友善的评论</textarea>
+			<div class="Imgs">
+				<li class="hh"><img src="images/add2.webp" alt=""></li> 
+				<li><img src="images/add3.webp" alt=""></li>
+				<li class="hhh"><img src="images/add4.webp" alt=""></li>
+				<li><img src="images/add5.webp" alt=""></li> 
+				
+			</div>
+			<br>
+			<button>发布</button>
+		</div>
+		
+	</div>
+	<!--wrapper end-->
+
+	<!--footer start-->
+	<div class="footer">
+		<!--footer_nav start-->
+		<div class="footer_nav">
+		
+			<a href="#header">回到顶部</a>
+		</div>
+		<!--footer_nav end-->
+		<!--footer_logo start-->
+		<div class="footer_logo">
+			<img src="images/header.jpg">
+		</div>
+		<!--footer_logo end-->
+		<!--footer_copyright start-->
+		<div class="footer_copyright">
+			<span>西安工程大学计算机学院出品</span>
+			<span>学会<b>爱</b>，与工程大一起长大！</span>
+		</div>
+		<!--footer_copyright end-->
+	</div>
+	<!--footer end-->
+	
+</div>
+<!--container end-->
+<script>
+	var btns=document.querySelector("button")
+	btns.onclick=function(){
+		location.href='login.html';
+	}
+</script>
+</body>
+</html>

@@ -1,0 +1,196 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>千与千寻网</title>
+<link rel="stylesheet" type="text/css" href="css/view.css"/>
+<style>
+	figure img {
+		cursor: zoom-in;
+	}
+</style>
+</head>
+
+<body>
+
+<!--container start-->
+<div class="container">
+
+	<!--header start-->
+	<div class="header" id="header">
+		<a href="index.html">
+		<img src="images/header.jpg">
+		</a>
+	</div>
+	<!--header end-->
+
+	<!--nav start-->
+	<div class="nav">
+		<a href="index.html">千寻首页</a>
+		<a href="view1.html">剧情简介</a>
+		<a href="view2.html">人物简介</a>
+		<a href="view3.html">精彩剧照</a>
+		<a href="view4.html">获奖记录</a>
+		<a href="view5.html">热门影评</a>
+		<a href="view6.html">影片意义</a>
+		<a href="login.html">登录/注册</a>
+
+	</div>
+	<!--nav end-->
+	
+	<!--wrapper start-->
+	<div class="wrapper">
+		<div id="outerdiv" style="position: fixed; top:0;left: 0;background: rgba(0, 0, 0, 0.7);
+		 z-index: 2;width: 100%; height: 100%; display: none;">
+		 <div id="innerdiv" style="position: absolute;">
+			<img src=""  id="bigimg" style="border:5px solid #fff">
+		</div>
+		 </div>
+		<!--still start-->
+
+		<div class="still">
+		
+			<h2>精彩剧照</h2>
+			
+			<figure>
+				<img src="images/still1.jpg" />
+				<figcaption>千寻与父母误闯入一个灵异的小镇</figcaption>
+			</figure>
+			
+			<figure>
+				<img src="images/still2.jpg" />
+				<figcaption>千寻父母由于贪吃食物变成了猪</figcaption>
+			</figure>
+			
+			<figure>
+				<img src="images/still3.jpg" />
+				<figcaption>汤婆婆的助手白龙帮助千寻离开</figcaption>
+			</figure>
+			
+			<figure>
+				<img src="images/still4.jpg"/>
+				<figcaption>白龙安慰并帮助千寻认识小镇</figcaption>
+			</figure>
+			
+			<figure>
+				<img src="images/still5.jpg" />
+				<figcaption>千寻在澡堂工作的过程中逐渐成长</figcaption>
+			</figure>
+			
+			<figure>
+				<img src="images/still6.jpg" />
+				<figcaption>千寻在汤屋开始辛苦的工作</figcaption>
+			</figure>
+			
+			<figure>
+				<img src="images/still7.jpg" />
+				<figcaption>千寻善良的品格得到澡堂其他人的尊重</figcaption>
+			</figure>
+			
+			<figure>
+				<img src="images/still8.jpg" />
+				<figcaption>千寻和白龙萌生出一段纯真的感情</figcaption>
+			</figure>
+			
+			<figure>
+				<img src="images/still9.jpg" />
+				<figcaption>千寻为白龙踏上了送魔女合约印章的路</figcaption>
+			</figure>
+			
+			<figure>
+				<img src="images/still10.jpg" />
+				<figcaption>千寻亲自把魔女合约印章归还给钱婆婆</figcaption>
+			</figure>
+			
+			<figure>
+				<img src="images/still11.jpg" />
+				<figcaption>白龙接千寻回小镇途中千寻帮白龙回忆起名字</figcaption>
+			</figure>
+			
+			<figure>
+				<img src="images/still12.jpg"/>
+				<figcaption>千寻终于救出来了爸爸妈妈</figcaption>
+			</figure>
+			
+		</div>
+		<!--still end-->
+		
+	</div>
+	<!--wrapper end-->
+
+	<!--footer start-->
+	<div class="footer">
+		<!--footer_nav start-->
+		<div class="footer_nav">
+			
+			<a href="#header">回到顶部</a>
+		</div>
+		<!--footer_nav end-->
+		<!--footer_logo start-->
+		<div class="footer_logo">
+			<img src="images/header.jpg">
+		</div>
+		<!--footer_logo end-->
+		<!--footer_copyright start-->
+		<div class="footer_copyright">
+			<span>西安工程大学计算机学院出品</span>
+			<span>学会<b>爱</b>，与工程大一起长大！</span>
+		</div>
+		<!--footer_copyright end-->
+	</div>
+	<!--footer end-->
+	
+</div>
+<!--container end-->
+
+<script src="jquery.min.js"></script>
+<script>
+	$(function(){
+	$("img").click(function(){
+		var _this=$(this)
+		if(_this.parent()[0].localName=="figure"){
+			imgShow("#outerdiv","#innerdiv", "#bigimg",_this)
+		}
+	})
+})
+</script>
+<script>
+	function imgShow(outerdiv,innerdiv,bigimg,_this){
+		var src=_this.attr("src")
+		$(bigimg).attr("src",src)
+		$("<img/>").attr("src",src).on('load',function(){
+			var windowW=$(window).width();
+			var windowH=$(window).height();
+			var realWidth=this.width;
+			var realHeight=this.height
+			var imgWidth,imgHeight;
+			var scale=0.8;
+			if(realHeight>windowH*scale){
+				imgHeight=windowH*scale;
+				imgWidth=imgHeight/realHeight*realWidth;
+				if(imgWidth>window*scale){
+					imgWidth=windowW*scale
+				}
+			}else if(realWidth>windowW*scale){
+				imgWidth=windowW*scale
+				imgHeight=imgWidth/realWidth*realHeight;
+			
+			}else{
+				imgWidth=realWidth;
+				imgHeight=realHeight;
+			}
+			$(bigimg).css("width",imgWidth);
+			var w=(windowW-imgWidth)/2;
+			var h=(windowH-imgHeight)/2;
+			$(innerdiv).css({"top":h,"left":w});
+			$(outerdiv).fadeIn("fast")
+		})
+		$(outerdiv).click(function(){
+			$(this).fadeOut("fast")
+		})
+
+		
+	}
+</script>
+</body>
+</html>
